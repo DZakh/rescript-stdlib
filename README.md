@@ -34,7 +34,7 @@ Open the standard library so it's available in the global scope. This is importa
 ```diff
  {
    "bsc-flags": [
-+    "-open RescriptStdlib",
++    "-open Stdlib",
    ]
  }
 ```
