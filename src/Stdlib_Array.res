@@ -185,5 +185,6 @@ let filterMap = (a, f) => {
   r
 }
 
-// TODO: Change this implementation?
-let flatMap = (a, f) => []->concatMany(map(a, f))
+@send external flatMap: (array<'a>, 'a => array<'b>) => array<'b> = "flatMap"
+
+let last = a => a->get(a->length - 1)

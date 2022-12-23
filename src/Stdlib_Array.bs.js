@@ -4,7 +4,6 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Js_math = require("rescript/lib/js/js_math.js");
 var Caml_option = require("rescript/lib/js/caml_option.js");
-var Caml_splice_call = require("rescript/lib/js/caml_splice_call.js");
 
 function indexOfOpt(arr, item) {
   var index = arr.indexOf(item);
@@ -99,8 +98,12 @@ function filterMap(a, f) {
   return r;
 }
 
-function flatMap(a, f) {
-  return Caml_splice_call.spliceObjApply([], "concat", [a.map(f)]);
+function last(a) {
+  return a[a.length - 1 | 0];
+}
+
+function flatMap(prim0, prim1) {
+  return prim0.flatMap(prim1);
 }
 
 exports.indexOfOpt = indexOfOpt;
@@ -114,4 +117,5 @@ exports.filterMap = filterMap;
 exports.shuffle = shuffle;
 exports.shuffleInPlace = shuffleInPlace;
 exports.flatMap = flatMap;
+exports.last = last;
 /* No side effect */
