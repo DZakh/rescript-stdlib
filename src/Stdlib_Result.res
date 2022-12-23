@@ -22,6 +22,13 @@ let flatMap = (opt, f) =>
   | Error(y) => Error(y)
   }
 
+let mapError = (result, fn) => {
+  switch result {
+  | Ok(_) as ok => ok
+  | Error(error) => Error(fn(error))
+  }
+}
+
 let getWithDefault = (opt, default) =>
   switch opt {
   | Ok(x) => x

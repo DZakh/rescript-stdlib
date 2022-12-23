@@ -45,6 +45,17 @@ function flatMap(opt, f) {
   }
 }
 
+function mapError(result, fn) {
+  if (result.TAG === /* Ok */0) {
+    return result;
+  } else {
+    return {
+            TAG: /* Error */1,
+            _0: Curry._1(fn, result._0)
+          };
+  }
+}
+
 function getWithDefault(opt, $$default) {
   if (opt.TAG === /* Ok */0) {
     return opt._0;
@@ -73,6 +84,7 @@ exports.getExnWithMessage = getExnWithMessage;
 exports.mapWithDefault = mapWithDefault;
 exports.map = map;
 exports.flatMap = flatMap;
+exports.mapError = mapError;
 exports.getWithDefault = getWithDefault;
 exports.isOk = isOk;
 exports.isError = isError;
