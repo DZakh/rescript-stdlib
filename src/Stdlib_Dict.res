@@ -1,6 +1,8 @@
 type t<'a> = Js.Dict.t<'a>
 
 @get_index external get: (t<'a>, string) => option<'a> = ""
+@get_index
+external getUnsafe: (t<'a>, string) => 'a = ""
 @set_index external set: (t<'a>, string, 'a) => unit = ""
 @val external delete: 'a => unit = "delete"
 
