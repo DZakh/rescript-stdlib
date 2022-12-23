@@ -101,7 +101,7 @@ let reverse: array<'a> => array<'a>
 let filterMap: (array<'a>, 'a => option<'b>) => array<'b>
 let shuffle: array<'a> => array<'a>
 let shuffleInPlace: array<'a> => unit
-let flatMap: (array<'a>, 'a => array<'b>) => array<'b>
+@send external flatMap: (array<'a>, 'a => array<'b>) => array<'b> = "flatMap"
 let last: array<'a> => option<'a>
 @send
 external at: (array<'a>, int) => option<'a> = "at"

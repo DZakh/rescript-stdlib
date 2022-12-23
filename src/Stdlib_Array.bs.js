@@ -102,10 +102,6 @@ function last(a) {
   return a[a.length - 1 | 0];
 }
 
-function flatMap(prim0, prim1) {
-  return prim0.flatMap(prim1);
-}
-
 exports.indexOfOpt = indexOfOpt;
 exports.lastIndexOfOpt = lastIndexOfOpt;
 exports.reduce = reduce;
@@ -116,6 +112,5 @@ exports.reverse = reverse;
 exports.filterMap = filterMap;
 exports.shuffle = shuffle;
 exports.shuffleInPlace = shuffleInPlace;
-exports.flatMap = flatMap;
 exports.last = last;
 /* No side effect */
