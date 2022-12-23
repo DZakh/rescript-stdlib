@@ -34,7 +34,7 @@ function map(opt, f) {
   }
 }
 
-function flatMapU(opt, f) {
+function flatMap(opt, f) {
   if (opt.TAG === /* Ok */0) {
     return Curry._1(f, opt._0);
   } else {
@@ -72,7 +72,7 @@ function isError(x) {
 exports.getExnWithMessage = getExnWithMessage;
 exports.mapWithDefault = mapWithDefault;
 exports.map = map;
-exports.flatMapU = flatMapU;
+exports.flatMap = flatMap;
 exports.getWithDefault = getWithDefault;
 exports.isOk = isOk;
 exports.isError = isError;

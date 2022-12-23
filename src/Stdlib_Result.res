@@ -16,7 +16,7 @@ let map = (opt, f) =>
   | Ok(x) => Ok(f(x))
   | Error(y) => Error(y)
   }
-let flatMapU = (opt, f) =>
+let flatMap = (opt, f) =>
   switch opt {
   | Ok(x) => f(x)
   | Error(y) => Error(y)
