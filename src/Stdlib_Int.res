@@ -23,11 +23,8 @@ external fromFloat: float => int = "%intoffloat"
 @val external parseInt: 'a => float = "parseInt"
 @val external parseIntWithRadix: ('a, ~radix: int) => float = "parseInt"
 
-let fromString = (~radix=?, x) => {
-  let maybeInt = switch radix {
-  | Some(radix) => parseIntWithRadix(x, ~radix)
-  | None => parseInt(x)
-  }
+let fromString = x => {
+  let maybeInt = parseInt(x)
   if Stdlib_Float.isNaN(maybeInt) {
     None
   } else if maybeInt > Constants.maxValue->toFloat || maybeInt < Constants.minValue->toFloat {

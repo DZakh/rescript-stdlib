@@ -4,8 +4,8 @@
 
 var Constants = {};
 
-function fromString(radix, x) {
-  var maybeInt = radix !== undefined ? parseInt(x, radix) : parseInt(x);
+function fromString(x) {
+  var maybeInt = parseInt(x);
   if (isNaN(maybeInt) || maybeInt > 2147483647 || maybeInt < -2147483648) {
     return ;
   } else {
