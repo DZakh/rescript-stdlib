@@ -188,3 +188,6 @@ let filterMap = (a, f) => {
 @send external flatMap: (array<'a>, 'a => array<'b>) => array<'b> = "flatMap"
 
 let last = a => a->get(a->length - 1)
+
+@send
+external at: (array<'a>, int) => option<'a> = "at"
