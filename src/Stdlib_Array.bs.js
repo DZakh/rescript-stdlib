@@ -106,10 +106,6 @@ function flatMap(prim0, prim1) {
   return prim0.flatMap(prim1);
 }
 
-function at(prim0, prim1) {
-  return prim0.at(prim1);
-}
-
 exports.indexOfOpt = indexOfOpt;
 exports.lastIndexOfOpt = lastIndexOfOpt;
 exports.reduce = reduce;
@@ -122,5 +118,4 @@ exports.shuffle = shuffle;
 exports.shuffleInPlace = shuffleInPlace;
 exports.flatMap = flatMap;
 exports.last = last;
-exports.at = at;
 /* No side effect */

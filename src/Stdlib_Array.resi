@@ -103,4 +103,5 @@ let shuffle: array<'a> => array<'a>
 let shuffleInPlace: array<'a> => unit
 let flatMap: (array<'a>, 'a => array<'b>) => array<'b>
 let last: array<'a> => option<'a>
-let at: (array<'a>, int) => option<'a>
+@send
+external at: (array<'a>, int) => option<'a> = "at"
